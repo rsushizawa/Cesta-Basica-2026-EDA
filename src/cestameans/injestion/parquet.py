@@ -1,11 +1,15 @@
 from pathlib import Path
+
 import polars as pl
+
+from cestameans.ingestion.parquet import ParquetDataSource as _ParquetDataSource
+
 
 class ParquetDataSource:
     def __init__(self, path: Path) -> None:
         # Store the source path and any required reader configuration.
-        raise NotImplementedError
+        self._source = _ParquetDataSource(path)
 
     def read(self) -> pl.LazyFrame:
         # Scan Parquet lazily; preserve existing observation IDs.
-        raise NotImplementedError
+        return self._source.read()
