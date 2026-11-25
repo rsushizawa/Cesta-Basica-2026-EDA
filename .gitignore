@@ -78,6 +78,10 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+**/.ipynb_checkpoints/
+
+# Generated experiment outputs
+artifacts/
 
 # IPython
 profile_default/
